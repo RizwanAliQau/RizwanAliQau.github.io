@@ -44,11 +44,11 @@ export const publications: Publication[] = [
   },
   {
     title:
-      'Real-Time CNN-Based Driver Distraction & Drowsiness Detection System',
+      'Improving performance of CNN based vehicle detection and tracking by median algorithm',
     authors: 'R. A. Shah, H. W. Kim, et al.',
-    venue: 'Intelligent Automation & Soft Computing',
-    year: 2023,
-    type: 'journal',
+    venue: '2021 IEEE International Conference on Consumer Electronics-Asia (ICCE-Asia)',
+    year: 2021,
+    type: 'conference',
   },
   {
     title:
@@ -62,7 +62,7 @@ export const publications: Publication[] = [
   },
   {
     title:
-      'Enhancement of Anomaly Detection Using Two-Stage Autoencoder with Noise Filtering',
+      'Enhancement of Anomaly Detection Using Two-Stage Anomlay Segmentation Model',
     authors: 'R. A. Shah, H. W. Kim',
     venue: 'ICNGC',
     year: 2022,
