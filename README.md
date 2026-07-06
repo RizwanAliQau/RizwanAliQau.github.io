@@ -3,8 +3,6 @@
 Personal academic portfolio built with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com), deployed to GitHub Pages at **https://rizwanaliqau.github.io**.
 
 ## Features
-
-- Minimalist academic design with dark mode
 - Modular content in `src/data/` for easy updates
 - Responsive layout for mobile and desktop
 - GitHub Actions deployment to GitHub Pages
