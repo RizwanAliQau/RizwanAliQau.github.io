@@ -1,0 +1,45 @@
+---
+import type { Publication } from '../data/publications';
+
+interface Props {
+  publication: Publication;
+}
+
+const { publication } = Astro.props;
+
+const typeLabel = {
+  journal: 'Journal',
+  conference: 'Conference',
+  'working-paper': 'Working Paper',
+}[publication.type];
+---
+
+<article class="card-surface flex h-full flex-col">
+  <div class="flex items-start justify-between gap-3">
+    <span class="rounded-full border border-paper-border px-2.5 py-0.5 text-xs font-medium text-ink-muted dark:border-slate-700 dark:text-slate-400">
+      {typeLabel}
+    </span>
+    <span class="text-xs font-medium text-ink-muted dark:text-slate-500">{publication.year}</span>
+  </div>
+
+  <h4 class="mt-4 text-base font-semibold leading-snug text-ink dark:text-slate-100">
+    {publication.href ? (
+      <a href={publication.href} target="_blank" rel="noopener noreferrer" class="transition hover:text-ink-muted dark:hover:text-slate-300">
+        {publication.title}
+      </a>
+    ) : (
+      publication.title
+    )}
+  </h4>
+
+  <p class="mt-3 text-sm text-ink-muted dark:text-slate-400">{publication.authors}</p>
+  <p class="mt-1 text-sm font-medium text-ink dark:text-slate-300">{publication.venue}</p>
+
+  {publication.doi && (
+    <p class="mt-3 text-xs text-ink-faint dark:text-slate-500">DOI: {publication.doi}</p>
+  )}
+
+  {publication.note && (
+    <p class="mt-3 text-sm text-ink-muted dark:text-slate-400">{publication.note}</p>
+  )}
+</article>

@@ -1,0 +1,54 @@
+---
+import PublicationCard from './PublicationCard.astro';
+import { publications, workingPapers } from '../data/publications';
+
+const journalPapers = publications.filter((p) => p.type === 'journal');
+const conferencePapers = publications.filter((p) => p.type === 'conference');
+---
+
+<section id="publications" class="border-b border-paper-border py-16 dark:border-slate-800 sm:py-24">
+  <div class="section-shell">
+    <div class="max-w-2xl">
+      <p class="section-title">Selected Publications</p>
+      <h2 class="mt-3 text-2xl font-semibold tracking-tight text-ink dark:text-slate-50 sm:text-3xl">
+        Peer-Reviewed Research
+      </h2>
+      <p class="mt-4 text-ink-muted dark:text-slate-400">
+        Journal and conference contributions in visual anomaly detection, self-supervised learning, and industrial computer vision.
+      </p>
+    </div>
+
+    <div class="mt-12">
+      <h3 class="text-sm font-semibold uppercase tracking-[0.18em] text-ink-muted dark:text-slate-500">
+        Journal Articles
+      </h3>
+      <div class="mt-5 grid gap-4 md:grid-cols-2">
+        {journalPapers.map((paper) => <PublicationCard publication={paper} />)}
+      </div>
+    </div>
+
+    <div class="mt-12">
+      <h3 class="text-sm font-semibold uppercase tracking-[0.18em] text-ink-muted dark:text-slate-500">
+        Conference Papers
+      </h3>
+      <div class="mt-5 grid gap-4 md:grid-cols-2">
+        {conferencePapers.map((paper) => <PublicationCard publication={paper} />)}
+      </div>
+    </div>
+
+    {
+      workingPapers.length > 0 && (
+        <div class="mt-12">
+          <h3 class="text-sm font-semibold uppercase tracking-[0.18em] text-ink-muted dark:text-slate-500">
+            Working Papers
+          </h3>
+          <div class="mt-5 grid gap-4 md:grid-cols-2">
+            {workingPapers.map((paper) => (
+              <PublicationCard publication={paper} />
+            ))}
+          </div>
+        </div>
+      )
+    }
+  </div>
+</section>

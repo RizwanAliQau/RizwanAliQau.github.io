@@ -1,0 +1,53 @@
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth antialiased;
+  }
+
+  body {
+    @apply bg-paper-soft text-ink font-sans leading-relaxed;
+  }
+
+  .dark body,
+  html.dark body {
+    @apply bg-slate-950 text-slate-100;
+  }
+
+  ::selection {
+    @apply bg-slate-900 text-white;
+  }
+
+  html.dark ::selection {
+    @apply bg-slate-100 text-slate-900;
+  }
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto w-full max-w-site px-5 sm:px-8;
+  }
+
+  .section-title {
+    @apply text-xs font-semibold uppercase tracking-[0.2em] text-ink-muted dark:text-slate-400;
+  }
+
+  .card-surface {
+    @apply rounded-xl border border-paper-border bg-paper p-6 shadow-sm transition-colors dark:border-slate-800 dark:bg-slate-900;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg bg-ink px-5 py-2.5 text-sm font-medium text-white transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white dark:focus-visible:outline-slate-100;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-lg border border-paper-border bg-paper px-5 py-2.5 text-sm font-medium text-ink transition hover:bg-paper-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800 dark:focus-visible:outline-slate-100;
+  }
+}
