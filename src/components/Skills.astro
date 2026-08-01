@@ -2,25 +2,23 @@
 import { skillCategories } from '../data/skills';
 ---
 
-<section id="skills" class="border-b border-paper-border py-16 dark:border-slate-800 sm:py-24">
+<section id="skills" class="border-b divider-line py-16 sm:py-24">
   <div class="section-shell">
     <div class="max-w-2xl">
-      <p class="section-title">Technical Skills</p>
-      <h2 class="mt-3 text-2xl font-semibold tracking-tight text-ink dark:text-slate-50 sm:text-3xl">
-        Tools & Research Expertise
-      </h2>
+      <p class="section-title">Skills</p>
+      <h2 class="section-heading">Tools & research expertise</h2>
     </div>
 
-    <div class="mt-12 grid gap-6 md:grid-cols-3">
+    <div class="mt-12 grid gap-10 md:grid-cols-3 md:gap-12">
       {
         skillCategories.map((category) => (
-          <div class="card-surface">
-            <h3 class="text-sm font-semibold uppercase tracking-[0.16em] text-ink dark:text-slate-200">
+          <div>
+            <h3 class="text-xs font-semibold uppercase tracking-[0.18em] text-ink-faint">
               {category.title}
             </h3>
             <ul class="mt-5 flex flex-wrap gap-2">
               {category.items.map((item) => (
-                <li class="rounded-md border border-paper-border bg-paper-soft px-3 py-1.5 text-sm text-ink-muted dark:border-slate-800 dark:bg-slate-950 dark:text-slate-300">
+                <li class="rounded-md border border-paper-border/80 bg-white/50 px-3 py-1.5 text-sm text-ink-muted backdrop-blur transition hover:border-signal/40 hover:text-ink dark:border-white/10 dark:bg-white/5 dark:text-slate-300 dark:hover:text-paper">
                   {item}
                 </li>
               ))}

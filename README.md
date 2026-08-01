@@ -1,33 +1,13 @@
 # Rizwan Ali Shah — Academic Portfolio
 
-Personal academic portfolio built with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com), deployed to GitHub Pages at **https://rizwanaliqau.github.io**.
+Personal academic portfolio built with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com), live at **https://rizwanaliqau.github.io**.
 
 ## Features
+- Brand-first hero with optical-grid atmosphere and motion
 - Modular content in `src/data/` for easy updates
-- Responsive layout for mobile and desktop
+- Research highlights, timeline, publications, and skills
+- Light-first theme with optional dark mode
 - GitHub Actions deployment to GitHub Pages
-
-## Project Structure
-
-```
-src/
-├── components/
-│   ├── Hero.astro           # About / bio section
-│   ├── Experience.astro     # Professional timeline
-│   ├── Publications.astro   # Publication grid
-│   ├── PublicationCard.astro
-│   ├── Skills.astro
-│   └── Contact.astro
-├── data/
-│   ├── site.ts              # Bio, email, CV path, footer
-│   ├── experience.ts        # Roles & funded projects
-│   ├── publications.ts      # Journals, conferences, working papers
-│   └── skills.ts
-├── layouts/
-│   └── BaseLayout.astro
-└── pages/
-    └── index.astro
-```
 
 ## Local Development
 
@@ -47,25 +27,12 @@ npm run preview
 
 | What to change | File |
 |----------------|------|
-| Bio, email, CV link | `src/data/site.ts` |
+| Bio, email, CV, research highlights | `src/data/site.ts` |
 | Experience & projects | `src/data/experience.ts` |
 | Publications | `src/data/publications.ts` |
 | Skills | `src/data/skills.ts` |
-| Working papers | Append to `workingPapers` in `publications.ts` |
-
-## CV File
-
-Copy your CV to:
-
-```
-public/rizwan_Ali_shah_CV_final_2026.pdf
-```
 
 ## Deployment
 
 1. Enable **GitHub Pages** → Source: **GitHub Actions**
-2. Push to `main` — the workflow in `.github/workflows/deploy.yml` builds and deploys automatically
-
-## License
-
-Personal portfolio — all rights reserved.
+2. Push to `main` — `.github/workflows/deploy.yml` builds and deploys automatically

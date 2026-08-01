@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@astrojs/tailwind": "^6.0.2",
-    "@fontsource/inter": "^5.2.5",
+    "@fontsource-variable/dm-sans": "^5.2.5",
+    "@fontsource/instrument-serif": "^5.2.5",
     "astro": "^5.7.10",
     "tailwindcss": "^3.4.17"
   }

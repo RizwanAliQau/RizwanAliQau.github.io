@@ -1,7 +1,6 @@
-@import '@fontsource/inter/400.css';
-@import '@fontsource/inter/500.css';
-@import '@fontsource/inter/600.css';
-@import '@fontsource/inter/700.css';
+@import '@fontsource/instrument-serif/400.css';
+@import '@fontsource/instrument-serif/400-italic.css';
+@import '@fontsource-variable/dm-sans';
 
 @tailwind base;
 @tailwind components;
@@ -13,20 +12,24 @@
   }
 
   body {
-    @apply bg-paper-soft text-ink font-sans leading-relaxed;
+    @apply bg-paper text-ink font-sans leading-relaxed;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 15% -10%, rgba(15, 118, 110, 0.12), transparent 55%),
+      radial-gradient(ellipse 60% 40% at 95% 5%, rgba(72, 101, 129, 0.1), transparent 50%),
+      linear-gradient(180deg, #f7fafc 0%, #ebf4f8 40%, #f7fafc 100%);
+    background-attachment: fixed;
   }
 
-  .dark body,
   html.dark body {
-    @apply bg-slate-950 text-slate-100;
+    @apply bg-ink text-paper;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 15% -10%, rgba(45, 212, 191, 0.12), transparent 55%),
+      radial-gradient(ellipse 60% 40% at 95% 5%, rgba(130, 154, 177, 0.08), transparent 50%),
+      linear-gradient(180deg, #0b1c2c 0%, #102a43 45%, #0b1c2c 100%);
   }
 
   ::selection {
-    @apply bg-slate-900 text-white;
-  }
-
-  html.dark ::selection {
-    @apply bg-slate-100 text-slate-900;
+    @apply bg-signal text-white;
   }
 }
 
@@ -36,18 +39,44 @@
   }
 
   .section-title {
-    @apply text-xs font-semibold uppercase tracking-[0.2em] text-ink-muted dark:text-slate-400;
+    @apply text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-signal dark:text-teal-300;
   }
 
-  .card-surface {
-    @apply rounded-xl border border-paper-border bg-paper p-6 shadow-sm transition-colors dark:border-slate-800 dark:bg-slate-900;
+  .section-heading {
+    @apply mt-3 font-display text-3xl leading-tight tracking-tight text-ink dark:text-paper sm:text-4xl;
+  }
+
+  .section-lede {
+    @apply mt-4 max-w-prose text-base text-ink-muted dark:text-slate-300;
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-lg bg-ink px-5 py-2.5 text-sm font-medium text-white transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white dark:focus-visible:outline-slate-100;
+    @apply inline-flex items-center justify-center rounded-md bg-signal px-5 py-2.5 text-sm font-medium text-white shadow-glow transition duration-300 hover:bg-signal-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-lg border border-paper-border bg-paper px-5 py-2.5 text-sm font-medium text-ink transition hover:bg-paper-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800 dark:focus-visible:outline-slate-100;
+    @apply inline-flex items-center justify-center rounded-md border border-paper-border/80 bg-white/60 px-5 py-2.5 text-sm font-medium text-ink backdrop-blur transition duration-300 hover:border-signal/40 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal dark:border-white/15 dark:bg-white/5 dark:text-paper dark:hover:bg-white/10;
+  }
+
+  .optical-grid {
+    background-image:
+      linear-gradient(rgba(16, 42, 67, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(16, 42, 67, 0.05) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 20%, transparent 75%);
+  }
+
+  html.dark .optical-grid {
+    background-image:
+      linear-gradient(rgba(247, 250, 252, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(247, 250, 252, 0.06) 1px, transparent 1px);
+  }
+
+  .divider-line {
+    @apply border-paper-border/70 dark:border-white/10;
+  }
+
+  .reveal {
+    @apply animate-rise;
   }
 }
