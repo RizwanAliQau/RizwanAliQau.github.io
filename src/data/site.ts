@@ -4,7 +4,7 @@ export const site = {
   description:
     'PhD researcher in Electronics Engineering specializing in computer vision, self-supervised learning, and industrial anomaly detection.',
   email: 'rizwanali@cbnu.ac.kr',
-  cvPath: '/rizwan_Ali_shah_CV_final_2026.pdf',
+  cvPath: '/Rizwan_Ali_Shah_CV.pdf',
   location: 'Cheongju, South Korea',
   role: 'Deep Learning Researcher',
   focusLine: 'Computer vision, self-supervised learning, and industrial anomaly detection for smart manufacturing.',
